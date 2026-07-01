@@ -2,7 +2,8 @@ name: CI - File health
 
 on: [pull_request, push]
 
-permissions: {}
+permissions:
+  contents: read
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
@@ -13,11 +14,13 @@ jobs:
     name: Check
     runs-on: ubuntu-slim
     permissions:
+      contents: read
       security-events: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
+          token: ${{ github.token }}
           persist-credentials: false
 
       - name: Setup python

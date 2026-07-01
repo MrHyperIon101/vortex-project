@@ -5,7 +5,8 @@ on:
     - cron: '0 0 1 * *' # Monthly (1st day of month at midnight)
   workflow_dispatch: # Mainly for testing. Don't forget the Coverity usage limits.
 
-permissions: {}
+permissions:
+  contents: read
 
 jobs:
   coverity_scan:
@@ -31,6 +32,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
+          token: ${{ github.token }}
           persist-credentials: false
 
       - name: Install dependencies
