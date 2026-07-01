@@ -1,7 +1,7 @@
 import os
 import sys
 import shutil
-import subprocess
+import subprocess  # nosec B404
 
 def stage_and_package():
     build_dir = 'build'
@@ -72,7 +72,7 @@ def stage_and_package():
 
     print("Compiling core NSIS installer...")
     try:
-        result = subprocess.run(
+        result = subprocess.run(  # nosec B603
             [nsis_compiler, nsi_script],
             cwd=dist_dir,
             stdout=subprocess.PIPE,
@@ -101,9 +101,14 @@ def stage_and_package():
 
     print("Building Fluent UI setup wrapper (dotnet publish)...")
     try:
+        dotnet_exe = shutil.which("dotnet")
+        if not dotnet_exe:
+            print("Error: dotnet executable not found in PATH")
+            return
+
         # Run dotnet publish
-        result = subprocess.run(
-            ["dotnet", "publish", setup_proj, "-c", "Release", "-r", "win-x64", "--self-contained", "true", "-p:PublishSingleFile=true"],
+        result = subprocess.run(  # nosec B603
+            [dotnet_exe, "publish", setup_proj, "-c", "Release", "-r", "win-x64", "--self-contained", "true", "-p:PublishSingleFile=true"],
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             text=True,

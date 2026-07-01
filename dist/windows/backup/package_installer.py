@@ -1,6 +1,6 @@
 import os
 import shutil
-import subprocess
+import subprocess  # nosec B404
 
 def stage_and_package():
     build_dir = 'build'
@@ -64,7 +64,7 @@ def stage_and_package():
 
     print("Compiling installer using NSIS...")
     try:
-        result = subprocess.run(
+        result = subprocess.run(  # nosec B603
             [nsis_compiler, nsi_script],
             cwd=dist_dir,
             stdout=subprocess.PIPE,
