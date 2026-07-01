@@ -1,0 +1,2 @@
+C:\Users\mrhyp\OneDrive\Documents\vortex-master\src\setup\bin\Release\net10.0-windows\win-x64\publish\vortex_setup.pdb
+C:\Users\mrhyp\OneDrive\Documents\vortex-master\src\setup\bin\Release\net10.0-windows\win-x64\publish\vortex_setup.exe
