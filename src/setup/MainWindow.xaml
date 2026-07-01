@@ -27,14 +27,14 @@
 
         <!-- Main Content (Wizard Pages) -->
         <Grid Grid.Row="1" Margin="24,12,24,12">
-            
+
             <!-- Page 1: Welcome Page -->
             <Grid x:Name="PageWelcome" Visibility="Visible">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="200" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                
+
                 <!-- Welcome Left Graphics -->
                 <Border Grid.Column="0" Background="#000000" CornerRadius="8" Margin="0,0,16,0" BorderBrush="#1C1C22" BorderThickness="1">
                     <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -47,11 +47,11 @@
                     <StackPanel>
                         <TextBlock Text="Install Vortex" FontSize="28" FontWeight="SemiBold" Foreground="White" Margin="0,0,0,8" />
                         <TextBlock Text="Version 1.0.0" FontSize="14" Foreground="#888888" Margin="0,0,0,16" />
-                        
-                        <TextBlock Text="Vortex is a lightweight, modern, and insanely fast BitTorrent client with built-in privacy protection and custom network enhancements." 
+
+                        <TextBlock Text="Vortex is a lightweight, modern, and insanely fast BitTorrent client with built-in privacy protection and custom network enhancements."
                                    TextWrapping="Wrap" FontSize="13" Foreground="#B0B0B0" LineHeight="20" Margin="0,0,0,24" />
-                        
-                        <TextBlock Text="This setup wizard will guide you through the process. Click Next to continue." 
+
+                        <TextBlock Text="This setup wizard will guide you through the process. Click Next to continue."
                                    TextWrapping="Wrap" FontSize="13" Foreground="#888888" />
                     </StackPanel>
                 </Grid>
@@ -64,7 +64,7 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
-                
+
                 <StackPanel Grid.Row="0" Margin="0,0,0,12">
                     <TextBlock Text="License Agreement" FontSize="20" FontWeight="SemiBold" Foreground="White" />
                     <TextBlock Text="Please read the terms and conditions carefully before installing Vortex." FontSize="13" Foreground="#888888" Margin="0,4,0,0" />
@@ -89,7 +89,7 @@
                         <RadioButton x:Name="RadioUpgrade" IsChecked="True" GroupName="UpgradeGroup">
                             <StackPanel Margin="8,0,0,0">
                                 <TextBlock Text="Upgrade (Recommended)" FontSize="15" FontWeight="SemiBold" Foreground="White" />
-                                <TextBlock Text="Installs the new version over the existing installation. Your settings, torrent downloads, and configuration will be fully preserved." 
+                                <TextBlock Text="Installs the new version over the existing installation. Your settings, torrent downloads, and configuration will be fully preserved."
                                            TextWrapping="Wrap" FontSize="12" Foreground="#888888" Margin="0,4,0,0" />
                             </StackPanel>
                         </RadioButton>
@@ -99,7 +99,7 @@
                         <RadioButton x:Name="RadioCleanInstall" GroupName="UpgradeGroup">
                             <StackPanel Margin="8,0,0,0">
                                 <TextBlock Text="Clean Reinstall" FontSize="15" FontWeight="SemiBold" Foreground="White" />
-                                <TextBlock Text="Fully uninstalls the current installation of Vortex before performing a fresh installation." 
+                                <TextBlock Text="Fully uninstalls the current installation of Vortex before performing a fresh installation."
                                            TextWrapping="Wrap" FontSize="12" Foreground="#888888" Margin="0,4,0,0" />
                             </StackPanel>
                         </RadioButton>
@@ -113,7 +113,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                
+
                 <StackPanel Grid.Row="0" Margin="0,0,0,16">
                     <TextBlock Text="Feature Configuration" FontSize="20" FontWeight="SemiBold" Foreground="White" />
                     <TextBlock Text="Configure special features and connection profiles for Vortex." FontSize="13" Foreground="#888888" Margin="0,4,0,0" />
@@ -125,11 +125,11 @@
                         <ui:Card Padding="16">
                             <StackPanel>
                                 <TextBlock Text="Network Connection Profile" FontSize="14" FontWeight="SemiBold" Foreground="White" Margin="0,0,0,12" />
-                                
+
                                 <RadioButton x:Name="RadioStandardNet" IsChecked="True" GroupName="NetworkGroup" Margin="0,0,0,12">
                                     <StackPanel Margin="8,0,0,0">
                                         <TextBlock Text="Standard Mode (Wi-Fi / Ethernet)" FontSize="13" FontWeight="SemiBold" Foreground="White" />
-                                        <TextBlock Text="Standard profile for unmetered connections. Uses maximum available ports, TCP/uTP protocols, and standard encryption." 
+                                        <TextBlock Text="Standard profile for unmetered connections. Uses maximum available ports, TCP/uTP protocols, and standard encryption."
                                                    TextWrapping="Wrap" FontSize="11" Foreground="#888888" Margin="0,4,0,0" />
                                     </StackPanel>
                                 </RadioButton>
@@ -137,7 +137,7 @@
                                 <RadioButton x:Name="RadioMobileNet" GroupName="NetworkGroup">
                                     <StackPanel Margin="8,0,0,0">
                                         <TextBlock Text="Mobile Data Mode" FontSize="13" FontWeight="SemiBold" Foreground="White" />
-                                        <TextBlock Text="Optimized profile for metered/mobile hotspot connections. Limits download speed to 2 MB/s, restricts connections to TCP only (saves data overhead), and enforces full encryption." 
+                                        <TextBlock Text="Optimized profile for metered/mobile hotspot connections. Limits download speed to 2 MB/s, restricts connections to TCP only (saves data overhead), and enforces full encryption."
                                                    TextWrapping="Wrap" FontSize="11" Foreground="#888888" Margin="0,4,0,0" />
                                     </StackPanel>
                                 </RadioButton>
@@ -154,7 +154,7 @@
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                
+
                 <StackPanel Grid.Row="0" Margin="0,0,0,16">
                     <TextBlock Text="Installation Options" FontSize="20" FontWeight="SemiBold" Foreground="White" />
                     <TextBlock Text="Configure where and how Vortex will be installed on your computer." FontSize="13" Foreground="#888888" Margin="0,4,0,0" />
@@ -180,7 +180,7 @@
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Text="Additional Shortcuts &amp; Configuration" FontSize="13" FontWeight="SemiBold" Foreground="White" Margin="0,0,0,8" />
-                    
+
                     <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
                         <StackPanel>
                             <CheckBox x:Name="ChkDesktopShortcut" Content="Create Desktop Shortcut" IsChecked="True" Margin="0,4,0,4" />
@@ -208,7 +208,7 @@
                     <ColumnDefinition Width="200" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                
+
                 <!-- Finish Left Graphic -->
                 <Border Grid.Column="0" Background="#000000" CornerRadius="8" Margin="0,0,16,0" BorderBrush="#1C1C22" BorderThickness="1">
                     <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
@@ -231,7 +231,7 @@
                     <ColumnDefinition Width="200" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                
+
                 <Border Grid.Column="0" Background="#000000" CornerRadius="8" Margin="0,0,16,0" BorderBrush="#1C1C22" BorderThickness="1">
                     <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                         <Image Source="pack://application:,,,/logo.png" Width="110" Height="110" />
@@ -242,8 +242,8 @@
                     <StackPanel VerticalAlignment="Center" Margin="0,0,8,0">
                         <TextBlock Text="Uninstall Vortex" FontSize="28" FontWeight="SemiBold" Foreground="White" Margin="0,0,0,8" />
                         <TextBlock Text="Version 1.0.0" FontSize="14" Foreground="#888888" Margin="0,0,0,16" />
-                        
-                        <TextBlock Text="Choose which Vortex components should be removed from this computer." 
+
+                        <TextBlock Text="Choose which Vortex components should be removed from this computer."
                                    TextWrapping="Wrap" FontSize="13" Foreground="#B0B0B0" LineHeight="20" Margin="0,0,0,16" />
 
                         <StackPanel Margin="0,0,0,16">
@@ -254,8 +254,8 @@
                             <CheckBox x:Name="ChkUninstallConfig" Content="Remove configuration files" IsChecked="False" Margin="0,3,0,3" />
                             <CheckBox x:Name="ChkUninstallCache" Content="Remove torrents and cached data" IsChecked="False" Margin="0,3,0,3" />
                         </StackPanel>
-                        
-                        <TextBlock Text="Click Uninstall to begin the uninstallation." 
+
+                        <TextBlock Text="Click Uninstall to begin the uninstallation."
                                    TextWrapping="Wrap" FontSize="13" Foreground="#888888" />
                     </StackPanel>
                 </ScrollViewer>
@@ -276,7 +276,7 @@
                     <ColumnDefinition Width="200" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                
+
                 <Border Grid.Column="0" Background="#000000" CornerRadius="8" Margin="0,0,16,0" BorderBrush="#1C1C22" BorderThickness="1">
                     <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                         <Image Source="pack://application:,,,/logo.png" Width="110" Height="110" />
@@ -302,9 +302,9 @@
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="Auto" />
                 </Grid.ColumnDefinitions>
-                
+
                 <ui:Button x:Name="BtnCancel" Grid.Column="0" Content="Cancel" Click="BtnCancel_Click" Appearance="Secondary" Padding="20,8,20,8" />
-                
+
                 <StackPanel Grid.Column="2" Orientation="Horizontal">
                     <ui:Button x:Name="BtnBack" Content="&lt; Back" Click="BtnBack_Click" Visibility="Collapsed" Margin="0,0,8,0" Padding="20,8,20,8" />
                     <ui:Button x:Name="BtnNext" Content="Next &gt;" Click="BtnNext_Click" Appearance="Primary" Padding="20,8,20,8" />

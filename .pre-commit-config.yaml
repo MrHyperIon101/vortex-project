@@ -1,3 +1,16 @@
+exclude: |
+  (?x)^(
+    src/setup/bin/.* |
+    src/setup/obj/.* |
+    dist/windows/backup/.* |
+    dist/windows/installer-translations/.* |
+    dist/windows/NSISPlugins/Sources/.* |
+    dist/windows/config\.nsh |
+    dist/windows/uninstaller\.nsh |
+    dist/windows/vortex_1\.0\.0_x64_setup\.exe(\.silent\.exe)? |
+    qbittorrent-5\.2\.2(_lt20)?_x86_64\.AppImage
+  )$
+
 repos:
   - repo: local
     hooks:
@@ -62,6 +75,7 @@ repos:
           src/webui/www/private/scripts/lib/.*
         )$
       exclude_types:
+        - svg
         - ts
 
   - repo: https://github.com/crate-ci/typos.git

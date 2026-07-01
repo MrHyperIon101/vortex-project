@@ -23,7 +23,7 @@ def stage_and_package():
     # 1. Copy vortex.exe and vortex.pdb
     exe_src = os.path.join(build_dir, 'vortex.exe')
     pdb_src = os.path.join(build_dir, 'vortex.pdb')
-    
+
     if os.path.exists(exe_src):
         print(f"Copying {exe_src} to staging...")
         shutil.copy2(exe_src, os.path.join(staging_dir, 'vortex.exe'))
@@ -127,7 +127,7 @@ def stage_and_package():
         if os.path.exists(temp_backup):
             os.remove(temp_backup)
         os.rename(nsis_output, temp_backup)
-        
+
         # Copy wrapper to final location
         shutil.copy2(wrapper_publish_path, nsis_output)
         print(f"Success: Copied Fluent UI wrapper to {nsis_output}")

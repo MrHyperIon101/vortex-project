@@ -41,7 +41,7 @@ namespace VortexSetup
             try
             {
                 string exeName = Path.GetFileNameWithoutExtension(Environment.ProcessPath ?? "");
-                if (exeName.Equals("uninst", StringComparison.OrdinalIgnoreCase) || 
+                if (exeName.Equals("uninst", StringComparison.OrdinalIgnoreCase) ||
                     exeName.Equals("uninstall", StringComparison.OrdinalIgnoreCase))
                 {
                     _isUninstallMode = true;
@@ -155,7 +155,7 @@ namespace VortexSetup
             PageUninstallFinish.Visibility = _currentPage == WizardPage.UninstallFinish ? Visibility.Visible : Visibility.Collapsed;
 
             // Update Back / Next / Cancel buttons
-            BtnBack.Visibility = (_currentPage == WizardPage.Welcome || _currentPage == WizardPage.Installing || _currentPage == WizardPage.Finish || _currentPage == WizardPage.UninstallWelcome || _currentPage == WizardPage.Uninstalling || _currentPage == WizardPage.UninstallFinish) 
+            BtnBack.Visibility = (_currentPage == WizardPage.Welcome || _currentPage == WizardPage.Installing || _currentPage == WizardPage.Finish || _currentPage == WizardPage.UninstallWelcome || _currentPage == WizardPage.Uninstalling || _currentPage == WizardPage.UninstallFinish)
                 ? Visibility.Collapsed : Visibility.Visible;
 
             if (_currentPage == WizardPage.Finish || _currentPage == WizardPage.UninstallFinish)
@@ -315,10 +315,10 @@ namespace VortexSetup
             try
             {
                 TxtInstallingStatus.Text = "Extracting temporary installer files...";
-                
+
                 string tempDir = Path.Combine(Path.GetTempPath(), "VortexInstallTemp_" + Guid.NewGuid().ToString("N"));
                 Directory.CreateDirectory(tempDir);
-                
+
                 string tempInstallerPath = Path.Combine(tempDir, "vortex_nsis_installer.exe");
 
                 // Extract embedded NSIS installer resource
@@ -377,7 +377,7 @@ namespace VortexSetup
                 using (Process process = new Process { StartInfo = psi })
                 {
                     process.Start();
-                    
+
                     // Wait asynchronously for the process to exit
                     await Task.Run(() => process.WaitForExit());
 
@@ -464,7 +464,7 @@ namespace VortexSetup
                 }
 
                 System.Collections.Generic.List<string> newSettings = new System.Collections.Generic.List<string>();
-                
+
                 // Add Connection settings
                 bool isMobile = RadioMobileNet.IsChecked == true;
                 newSettings.Add(string.Format("Connection\\MobileDataModeActive={0}", isMobile ? "true" : "false"));
@@ -530,7 +530,7 @@ namespace VortexSetup
             try
             {
                 TxtUninstallingStatus.Text = "Running uninstaller...";
-                
+
                 string targetDir = AppDomain.CurrentDomain.BaseDirectory;
                 string coreUninstPath = Path.Combine(targetDir, "uninst_core.exe");
 

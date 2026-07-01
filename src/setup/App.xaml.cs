@@ -13,7 +13,7 @@ namespace VortexSetup
             bool isSilent = false;
             foreach (string arg in e.Args)
             {
-                if (arg.Equals("/S", StringComparison.OrdinalIgnoreCase) || 
+                if (arg.Equals("/S", StringComparison.OrdinalIgnoreCase) ||
                     arg.Equals("/s", StringComparison.OrdinalIgnoreCase))
                 {
                     isSilent = true;
@@ -24,7 +24,7 @@ namespace VortexSetup
             {
                 string exeName = Path.GetFileNameWithoutExtension(Environment.ProcessPath ?? "");
                 int exitCode;
-                if (exeName.Equals("uninst", StringComparison.OrdinalIgnoreCase) || 
+                if (exeName.Equals("uninst", StringComparison.OrdinalIgnoreCase) ||
                     exeName.Equals("uninstall", StringComparison.OrdinalIgnoreCase))
                 {
                     // Run silent uninstallation and exit

@@ -12,7 +12,7 @@ def get_pe_imports(filename):
 
     # Offset to PE Header
     pe_offset = struct.unpack('<I', data[0x3c:0x40])[0]
-    
+
     # PE Header Signature
     if data[pe_offset:pe_offset+4] != b'PE\x00\x00':
         print("Not a valid PE file (no PE signature)")
@@ -21,7 +21,7 @@ def get_pe_imports(filename):
     # Optional Header
     opt_header_offset = pe_offset + 24
     magic = struct.unpack('<H', data[opt_header_offset:opt_header_offset+2])[0]
-    
+
     if magic == 0x10b: # PE32
         import_dir_offset = opt_header_offset + 96 + 8
     elif magic == 0x20b: # PE32+ (64-bit)
@@ -71,7 +71,7 @@ def get_pe_imports(filename):
         desc = data[curr_offset:curr_offset+20]
         if len(desc) < 20 or desc == b'\x00'*20:
             break
-        
+
         characteristics, time_date, forwarder, name_rva, first_thunk = struct.unpack('<IIIII', desc)
         name_offset = rva_to_offset(name_rva)
         if name_offset is not None:
