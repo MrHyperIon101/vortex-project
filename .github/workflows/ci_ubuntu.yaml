@@ -44,7 +44,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           token: ${{ github.token }}
           persist-credentials: false
@@ -112,7 +112,7 @@ jobs:
 
       # to avoid scanning 3rdparty codebases, initialize it just before building qbt
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v4
+        uses: github/codeql-action/init@v4.37.3
         if: startsWith(matrix.libtorrent.version, 2.0) && (matrix.qbt_gui == 'GUI=ON')
         with:
           config-file: ./.github/workflows/helper/codeql/cpp.yaml
@@ -143,7 +143,7 @@ jobs:
           DESTDIR="qbittorrent" cmake --install build
 
       - name: Run CodeQL analysis
-        uses: github/codeql-action/analyze@v4
+        uses: github/codeql-action/analyze@v4.37.3
         if: startsWith(matrix.libtorrent.version, 2.0) && (matrix.qbt_gui == 'GUI=ON')
         with:
           category: "${{ github.base_ref || github.ref_name }} lt ${{ matrix.libtorrent.version }}"
@@ -161,7 +161,7 @@ jobs:
           output: sarif-results/cpp.sarif
 
       - name: Upload CodeQL SARIF
-        uses: github/codeql-action/upload-sarif@v4
+        uses: github/codeql-action/upload-sarif@v4.37.3
         if: startsWith(matrix.libtorrent.version, 2.0) && (matrix.qbt_gui == 'GUI=ON')
         with:
           sarif_file: sarif-results/cpp.sarif
