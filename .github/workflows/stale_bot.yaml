@@ -10,6 +10,7 @@ jobs:
   stale:
     runs-on: ubuntu-slim
     permissions:
+      issues: write
       pull-requests: write
     steps:
       - name: Mark and close stale PRs
